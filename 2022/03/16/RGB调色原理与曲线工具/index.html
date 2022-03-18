@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="原理部分有兴趣的话可以看看，不感兴趣也可以直接看下面的曲线调色部分。  RGB-加减色模型显色原理由于人眼视觉的生理原因，将红(R)绿(G)蓝(B)三色按比例混合后可以使人眼产生相应等效色觉（但混合后并不是真的产生了物理意义上的别的颜色）[^1]。 调色原理简单了解颜色关系   关系 感官上 数学上    相邻色 相似的颜色 色环上相差0~99度的颜色   （对比色） 对比较强的颜色 色环上相差">
+  <meta name="description" content="分享一下用PS、LR里曲线工具调色的一点心得！（属于非常业余的水平，本文内容需要仔细甄别）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RGB调色原理与曲线工具">
 <meta property="og:url" content="http://example.com/2022/03/16/RGB%E8%B0%83%E8%89%B2%E5%8E%9F%E7%90%86%E4%B8%8E%E6%9B%B2%E7%BA%BF%E5%B7%A5%E5%85%B7/index.html">
 <meta property="og:site_name" content="鱼塔">
-<meta property="og:description" content="原理部分有兴趣的话可以看看，不感兴趣也可以直接看下面的曲线调色部分。  RGB-加减色模型显色原理由于人眼视觉的生理原因，将红(R)绿(G)蓝(B)三色按比例混合后可以使人眼产生相应等效色觉（但混合后并不是真的产生了物理意义上的别的颜色）[^1]。 调色原理简单了解颜色关系   关系 感官上 数学上    相邻色 相似的颜色 色环上相差0~99度的颜色   （对比色） 对比较强的颜色 色环上相差">
+<meta property="og:description" content="分享一下用PS、LR里曲线工具调色的一点心得！（属于非常业余的水平，本文内容需要仔细甄别）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2022/03/16/RGB%E8%B0%83%E8%89%B2%E5%8E%9F%E7%90%86%E4%B8%8E%E6%9B%B2%E7%BA%BF%E5%B7%A5%E5%85%B7/Colorwheel-16474264988091.png">
 <meta property="og:image" content="http://example.com/2022/03/16/RGB%E8%B0%83%E8%89%B2%E5%8E%9F%E7%90%86%E4%B8%8E%E6%9B%B2%E7%BA%BF%E5%B7%A5%E5%85%B7/屏幕截图%202022-03-16%20183840.png">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="http://example.com/2022/03/16/RGB%E8%B0%83%E8%89%B2%E5%8E%9F%E7%90%86%E4%B8%8E%E6%9B%B2%E7%BA%BF%E5%B7%A5%E5%85%B7/2-16474319802314.png">
 <meta property="og:image" content="http://example.com/2022/03/16/RGB%E8%B0%83%E8%89%B2%E5%8E%9F%E7%90%86%E4%B8%8E%E6%9B%B2%E7%BA%BF%E5%B7%A5%E5%85%B7/344.png">
 <meta property="article:published_time" content="2022-03-16T08:51:50.000Z">
-<meta property="article:modified_time" content="2022-03-17T15:22:49.460Z">
+<meta property="article:modified_time" content="2022-03-18T12:40:50.018Z">
 <meta property="article:author" content="Tazdingo">
 <meta property="article:tag" content="技术">
 <meta property="article:tag" content="后期">
@@ -201,7 +201,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-17 23:22:49" itemprop="dateModified" datetime="2022-03-17T23:22:49+08:00">2022-03-17</time>
+                <time title="修改时间：2022-03-18 20:40:50" itemprop="dateModified" datetime="2022-03-18T20:40:50+08:00">2022-03-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,7 +231,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote>
+        <p>分享一下用PS、LR里曲线工具调色的一点心得！（属于非常业余的水平，本文内容需要仔细甄别）</p>
+<span id="more"></span>
+
+<blockquote>
 <p>原理部分有兴趣的话可以看看，不感兴趣也可以直接看下面的<a href="#%E6%9B%B2%E7%BA%BF%E8%B0%83%E8%89%B2">曲线调色</a>部分。</p>
 </blockquote>
 <h2 id="RGB-加减色模型"><a href="#RGB-加减色模型" class="headerlink" title="RGB-加减色模型"></a>RGB-加减色模型</h2><h3 id="显色原理"><a href="#显色原理" class="headerlink" title="显色原理"></a>显色原理</h3><p>由于人眼视觉的生理原因，将红(R)绿(G)蓝(B)三色按比例混合后可以使人眼产生相应等效色觉（但混合后并不是真的产生了物理意义上的别的颜色）[^1]。</p>
