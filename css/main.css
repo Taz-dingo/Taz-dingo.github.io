@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fffcff;
+  background: #cbf7ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2578,9 +2578,6 @@ body {
   background-image: url("/images/siteBackground.jpg");
   background-position: center;
   background-size: cover;
-}
-.brand {
-  color: #546b7c;
 }
 .site-title {
   color: #000;
