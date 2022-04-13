@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://tazdingo.live/2022/03/05/%E4%BB%8EC%E5%88%B0Java%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BA%8B%E6%83%85/分管不同的对象.png">
 <meta property="og:image" content="https://tazdingo.live/2022/03/05/%E4%BB%8EC%E5%88%B0Java%E5%80%BC%E5%BE%97%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BA%8B%E6%83%85/管理同一个对象.png">
 <meta property="article:published_time" content="2022-03-05T05:40:30.000Z">
-<meta property="article:modified_time" content="2022-04-03T08:11:18.570Z">
+<meta property="article:modified_time" content="2022-04-07T08:54:47.595Z">
 <meta property="article:author" content="Tazdingo">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="技术">
@@ -143,11 +143,6 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
-        <li class="menu-item menu-item-sitemap">
-
-    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
-
-  </li>
   </ul>
 </nav>
 
@@ -206,7 +201,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-03 16:11:18" itemprop="dateModified" datetime="2022-04-03T16:11:18+08:00">2022-04-03</time>
+                <time title="修改时间：2022-04-07 16:54:47" itemprop="dateModified" datetime="2022-04-07T16:54:47+08:00">2022-04-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,9 +246,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span>[] array = <span class="keyword">new</span> <span class="title class_">double</span>[<span class="number">10</span>];	<span class="comment">//数组元素获得默认值，可以直接使用</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li><p>相比c语言多了boolean类型，只有true和false两个值，相当于c里的1和0。</p>
-</li>
-<li><p>基本数据类型都有对应的包裹类型（使其对象化），可以像对象一样用”.“运算符使用函数。（如Integer.MAX_VALUE可以获取Integer类型的最大值）</p>
+<li><p>基本数据类型都有对应的包裹类型（使其对象化），可以像对象一样用”.“运算符使用函数（如Integer.MAX_VALUE可以获取Integer类型的最大值）。<a href="rainie1003.%5BJava%E2%80%94%E2%80%94%E5%8C%85%E8%A3%B9%E7%B1%BB%E5%9E%8B%5D(https://blog.csdn.net/xykimred/article/details/90207553)">^1</a></p>
 <table>
 <thead>
 <tr>
@@ -297,27 +290,39 @@
 </li>
 </ol>
 <h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><ol>
-<li><p>switch case:</p>
+<li><p><code>switch case</code>:</p>
 <p>case除了支持int,char,short，还可以支持String(JDK7)、Lambda表达式(JDK12)。</p>
 </li>
 <li><p>if()内只能用布尔表达式（c语言可以写if(1)，但java不行，因为”1“是int类型）。</p>
 </li>
 </ol>
 <h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><ol>
-<li><p>没有goto跳转（经典为了安全删删删~），但有标号语句跳转。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">index1:		<span class="comment">//注意此处&quot;index1:&quot;</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)	</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">100</span>;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">88</span>&amp;&amp;j==<span class="number">88</span>)</span><br><span class="line">            <span class="keyword">break</span> index1;	<span class="comment">//跳转到&quot;index1:&quot; 后的位置</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//break和continue都是可以的</span></span><br></pre></td></tr></table></figure>
+<li><p>没有goto跳转（经典为了安全删删删~），但java没有赶尽杀绝，相应的设计了<strong>标号语句</strong>跳转。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">index1:		<span class="comment">//注意此处&quot;index1:&quot;</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)	</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">100</span>;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">88</span>&amp;&amp;j==<span class="number">88</span>)</span><br><span class="line">            <span class="keyword">break</span> index1;	<span class="comment">//跳转到&quot;index1:&quot; 后的位置</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>标号语句有一些限制（没错，也是为了安全~）：</p>
+<p>标号语句的特性：[^2]</p>
 <ul>
-<li>只能跳出语句块。</li>
-<li>只能跳出break语句所在的外部语句块。</li>
+<li><p><code>break</code>和<code>continue</code>都是可以搭配标签的。</p>
+</li>
+<li><p>只能跳出语句块，不能跳入语句块。</p>
+</li>
+<li><p>其实标签可以应用到任何语句中甚至if语句、块语句。</p>
+<p>（但并不提倡这种使用方式！）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">label:</span><br><span class="line">&#123;</span><br><span class="line">    ···</span><br><span class="line">    <span class="keyword">if</span>(condition)</span><br><span class="line">        <span class="keyword">break</span> label;	<span class="comment">//exits block</span></span><br><span class="line">    ···</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li><p>特别地，有增强for循环。</p>
+<li><p>特别地，有for each循环。</p>
+<blockquote>
+<p>Java有一种功能很强的循环结构，可以用来<strong>依次处理数组中的每个元素</strong>（其他类型的元素集合亦可）而<strong>不必为指定下标值而分心</strong>。</p>
+<p>这种增强的for循环的语句格式为：<br><code>for(variable : collection) statement</code></p>
+<p>定义一个变量暂存集合中的每一个元素，并执行相应的语句（也可以是语句块）。<code>collection</code>这一集合表达式必须是一个数组或者是一个实现了<code>Iterable</code>接口的类对象（例如<code>ArrayList</code>）。[^3]</p>
+</blockquote>
+<p>需要注意的是：</p>
+<ul>
+<li>for each循环会<strong>遍历集合中的每一个元素</strong>。很多场合下我们不希望这样，所以还是需要使用传统的for循环。</li>
+</ul>
+<p>例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int[] numArray = &#123; 1, 2, 3, 4, 5, 6 &#125;;</span><br><span class="line">for (int i : numArray) </span><br><span class="line">&#123;</span><br><span class="line">    System.out.print(i);</span><br><span class="line">&#125;</span><br><span class="line">//输出结果为”123456“</span><br></pre></td></tr></table></figure>
-
-<p>在for()内：”变量“ + ”:” + “数组” 的写法叫做增强for循环。</p>
-<p>冒号“:”表示迭代，即不断从数组<code>numArray</code>中取出元素赋值给临时变量<code>i</code>，直到最后一个元素。</p>
 </li>
 <li><p>同<a href="#%E5%88%A4%E6%96%AD">判断</a>一节，for、while的条件都必须是布尔表达式，c语言里无限循环<code>while(1)</code>在java里要写成<code>while(true)</code>。</p>
 </li>
@@ -334,13 +339,13 @@
 <p>（相当于C语言中的 <code>sizeof(array)/sizeof(type of array)</code> ）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;numbers.length;i++)&#123;&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>定义数组时，元素个数可以是变量。</p>
+<li><p>定义数组时，元素个数可以是变量。（其实C语言从C99标准开始也可以了）</p>
 </li>
 <li><p>定义数组时，可以不为数组元素分配内存空间，之后再指明数组长度。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] a;</span><br><span class="line">a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">5</span>];</span><br><span class="line">System.out.println(a.length);</span><br><span class="line">a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">50</span>];</span><br><span class="line">System.out.println(a.length);</span><br><span class="line"><span class="comment">//以上代码输出结果为：&quot;5\n50&quot;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ol>
-<li><p>字符串对象自带操作：</p>
+<li><p>字符串对象自带很多操作：</p>
 <p>（用”.”运算符调用）</p>
 <ul>
 <li>比较大小</li>
@@ -348,7 +353,7 @@
 <li>访问某个位置的字符</li>
 <li>取得子串（子集）</li>
 <li>寻找特定字符</li>
-<li>······(等等)</li>
+<li>······</li>
 </ul>
 </li>
 <li><p>所有的字符串都是不可变的，对它们的操作结果都是制造新的字符串出来。</p>
@@ -359,7 +364,7 @@
 <p>啥是方法呢？可以理解为只属于类的函数，类内部的函数，就叫做方法。</p>
 <blockquote>
 <p>函数是大家的函数，方法是类的方法。</p>
-<p>一个东西，用对象调用的叫方法，直接调函数名的叫函数。</p>
+<p>一个东西，用对象调用的叫方法，直接调函数名的叫函数。[^3]</p>
 </blockquote>
 </li>
 </ol>
@@ -369,10 +374,10 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;a string&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 <p><code>new String</code>：创建一个String对象。</p>
-<p><code>(&quot;a string&quot;)</code>：用“a strong”初始化这个对象。</p>
+<p><code>(&quot;a string&quot;)</code>：用“a string”初始化这个对象。</p>
 <p><code>String s = new String();</code>：创建<strong>管理这个对象</strong>的变量s。</p>
 </li>
-<li><p>对象变量是对象的管理者而不是所有者。</p>
+<li><p>对象变量是对象的管理者而不是所有者。[^4]</p>
 <p><em>嗯？？？什么意思？？</em></p>
 <p>别慌，看下面字符串(<code>String</code>)的三个例子：</p>
 <ul>
@@ -422,12 +427,8 @@
 </li>
 </ol>
 <hr>
-<p>参考内容：</p>
-<ol>
-<li>中国大学MOOC.<a target="_blank" rel="noopener" href="https://www.icourse163.org/course/ZJU-1001541001?from=searchPage">零基础学Java语言-翁恺</a></li>
-<li>rainie1003.<a target="_blank" rel="noopener" href="https://blog.csdn.net/xykimred/article/details/90207553">Java——包裹类型</a></li>
-<li>20508LAlala.<a target="_blank" rel="noopener" href="https://blog.csdn.net/zx_balabala/article/details/82633975">java中方法和函数区别</a></li>
-</ol>
+<p>本文参考资料：</p>
+<p>[^2]:Java核心卷Ⅰ(10th edition).3.8.6 中断控制流程语句<br>[^3]:Java核心卷Ⅰ(10th edition).3.10.2 for each循环<br>[^4]:508LAlala.<a target="_blank" rel="noopener" href="https://blog.csdn.net/zx_balabala/article/details/82633975">java中方法和函数区别</a><br>[^5]:翁恺.<a target="_blank" rel="noopener" href="https://www.icourse163.org/course/ZJU-1001541001?from=searchPage">零基础学Java语言</a></p>
 
     </div>
 
@@ -528,14 +529,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
