@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #7d7577;
+  background: #ffa6ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2568,7 +2568,7 @@ ul.breadcrumb li + li:last-child {
   opacity: 0;
 }
 body {
-  color: #313135;
+  color: rgba(26,36,52,0.761);
   background-image: url("/images/background.jpg");
   background-repeat: repeat;
   background-attachment: scroll;
@@ -2588,4 +2588,45 @@ body {
   color: #000;
   font-size: 1em;
   margin: 10px 0;
+}
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  border-left: 7px solid #5e81ac;
+  margin-left: -40px;
+}
+.sidebar-nav .sidebar-nav-active {
+  border-bottom-color: #5e81ac;
+  color: #5e81ac;
+}
+.post-toc .nav .active-current > a {
+  color: #5e81ac;
+}
+.post-toc .nav .active > a {
+  border-bottom-color: #5e81ac;
+}
+.btn {
+  display: none;
+}
+.posts-expand .post-title-link {
+  color: #2e405b;
+}
+.index .post-title,
+.post .post-title {
+  text-align: left;
+}
+.posts-expand .post-meta {
+  text-align: left;
+  margin: 3px 0 15px 0;
+}
+.posts-expand .post-title {
+  font-size: 1.25em;
+}
+p {
+  margin: 0 0 0px 0;
+}
+.post-meta-item-text {
+  display: none;
 }
