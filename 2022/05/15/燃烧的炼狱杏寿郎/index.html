@@ -33,11 +33,12 @@
 <meta property="og:image" content="https://tazdingo.live/2022/05/15/%E7%87%83%E7%83%A7%E7%9A%84%E7%82%BC%E7%8B%B1%E6%9D%8F%E5%AF%BF%E9%83%8E/大哥原图.png">
 <meta property="og:image" content="https://tazdingo.live/2022/05/15/%E7%87%83%E7%83%A7%E7%9A%84%E7%82%BC%E7%8B%B1%E6%9D%8F%E5%AF%BF%E9%83%8E/燃烧的大哥.png">
 <meta property="article:published_time" content="2022-05-15T13:51:36.000Z">
-<meta property="article:modified_time" content="2022-05-18T15:07:44.512Z">
+<meta property="article:modified_time" content="2022-05-29T03:03:19.170Z">
 <meta property="article:author" content="Tazdingo">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="技术">
-<meta property="article:tag" content="processing">
+<meta property="article:tag" content="Processing">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tazdingo.live/2022/05/15/%E7%87%83%E7%83%A7%E7%9A%84%E7%82%BC%E7%8B%B1%E6%9D%8F%E5%AF%BF%E9%83%8E/大哥原图.png">
 
@@ -142,14 +143,19 @@
     <a href="/categories/%E9%98%85%E8%A7%88%E5%AE%A4-%E6%94%BE%E6%98%A0%E5%8E%85" rel="section"><i class="fa fa-coffee fa-fw"></i>阅览室&放映厅</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-标签云">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签云</a>
 
   </li>
         <li class="menu-item menu-item-时间轴">
 
     <a href="/archives/" rel="section"><i class="fa fa-folder fa-fw"></i>时间轴</a>
+
+  </li>
+        <li class="menu-item menu-item-愿望清单">
+
+    <a href="/wishlists/" rel="section"><i class="fa fa-calendar fa-fw"></i>愿望清单</a>
 
   </li>
   </ul>
@@ -210,7 +216,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-18 23:07:44" itemprop="dateModified" datetime="2022-05-18T23:07:44+08:00">2022-05-18</time>
+                <time title="修改时间：2022-05-29 11:03:19" itemprop="dateModified" datetime="2022-05-29T11:03:19+08:00">2022-05-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,10 +258,16 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据noise()计算偏移角度</span></span><br><span class="line">angle = noise(pos.x/noiseScale, pos.y/noiseScale) * noiseStrength;</span><br><span class="line"><span class="comment">//粒子位置根据angle值变化</span></span><br><span class="line">pos.x += cos(angle) * step; </span><br><span class="line">pos.y += sin(angle) * step;</span><br></pre></td></tr></table></figure>
 <h2 id="思路">思路</h2>
 <p>“刺绣法”。用人话说就是拿来一张底图，用它的图形形状来规定小粒子的生成位置，再让粒子移动产生轨迹，从而形成漂亮的效果。</p>
-<p>此处利用的是像素的明度来确定范围[^1]。每帧遍历画布里的每个像素，明度低于某阈值的像素处可以生成粒子。</p>
+<p>此处利用的是像素的明度来确定范围<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。每帧遍历画布里的每个像素，明度低于某阈值的像素处可以生成粒子。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//遍历整个画面</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;j &lt; height;j++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i &lt; width;i++)&#123;</span><br><span class="line">      <span class="type">color</span> <span class="variable">c</span> <span class="operator">=</span> get(i,j);  <span class="comment">//获取像素点的颜色</span></span><br><span class="line">      <span class="keyword">if</span>(brightness(c) &lt; bright)&#123;  <span class="comment">//如果像素点的明度小于bright</span></span><br><span class="line">        particles.add(<span class="keyword">new</span> <span class="title class_">Particle</span>(i,j));  <span class="comment">//那么在该点生成一个粒子</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>大致思路是这样，其他不好懂的就是Processing内库的函数了，直接到<a target="_blank" rel="noopener" href="https://processing.org/reference">官方文档</a>哪里不会查哪里。</p>
-<p>参考资料：</p>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>おかず.<a target="_blank" rel="noopener" href="https://note.com/outburst/n/nf4643a27cd7e">Generative Art
+#126</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
     </div>
 
@@ -267,7 +279,8 @@
           <div class="post-tags">
               <a href="/tags/Java/" rel="tag"># Java</a>
               <a href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag"># 技术</a>
-              <a href="/tags/processing/" rel="tag"># processing</a>
+              <a href="/tags/Processing/" rel="tag"># Processing</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
           </div>
 
         
@@ -364,8 +377,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-          
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
