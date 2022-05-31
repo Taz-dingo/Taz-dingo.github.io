@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="0QXWLBeiqPsNMDz4BNMct6vUvsOhZmXzNcTyMyMhEFc">
+  <meta name="baidu-site-verification" content="code-4Rf3HSGjIR">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tazdingo.live","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="这是一场意外~上学期误抢了Python公选课，听说会自动退课我就没管了。结果这学期直到上了几周课后我才发现这货还在我的课表里躺着。。。但是这学期好忙不想上这课（说白了就是懒hh），想着挂了算了，但是又看到大作业占成绩70%——欸嘿嘿，做好了不就可以飘过了，于是就有了这个作业。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自然噪波圆">
+<meta property="og:url" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/index.html">
+<meta property="og:site_name" content="鱼塔">
+<meta property="og:description" content="这是一场意外~上学期误抢了Python公选课，听说会自动退课我就没管了。结果这学期直到上了几周课后我才发现这货还在我的课表里躺着。。。但是这学期好忙不想上这课（说白了就是懒hh），想着挂了算了，但是又看到大作业占成绩70%——欸嘿嘿，做好了不就可以飘过了，于是就有了这个作业。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/星云.png">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/木纹.png">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/circle1.png">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/circle2.png">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/circle3.png">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/circle4.png">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/0.png">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/1.png">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/2.png">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/3.png">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/4.png">
+<meta property="og:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/5.png">
+<meta property="article:published_time" content="2022-05-29T03:21:43.000Z">
+<meta property="article:modified_time" content="2022-05-30T15:18:08.403Z">
+<meta property="article:author" content="Tazdingo">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Processing">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/星云.png">
+
+<link rel="canonical" href="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>自然噪波圆 | 鱼塔</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">鱼塔</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">咕嘟咕嘟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-bb空间">
+
+    <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5" rel="section"><i class="fa fa-star fa-fw"></i>bb空间</a>
+
+  </li>
+        <li class="menu-item menu-item-学习">
+
+    <a href="/categories/%E5%AD%A6%E4%B9%A0" rel="section"><i class="fa fa-book fa-fw"></i>学习</a>
+
+  </li>
+        <li class="menu-item menu-item-阅览室&放映厅">
+
+    <a href="/categories/%E9%98%85%E8%A7%88%E5%AE%A4-%E6%94%BE%E6%98%A0%E5%8E%85" rel="section"><i class="fa fa-coffee fa-fw"></i>阅览室&放映厅</a>
+
+  </li>
+        <li class="menu-item menu-item-愿望清单">
+
+    <a href="/wishlists/" rel="section"><i class="fa fa-calendar fa-fw"></i>愿望清单</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tazdingo.live/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Tazdingo">
+      <meta itemprop="description" content="想做点有意思的">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鱼塔">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          自然噪波圆
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-29 11:21:43" itemprop="dateCreated datePublished" datetime="2022-05-29T11:21:43+08:00">2022-05-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-30 23:18:08" itemprop="dateModified" datetime="2022-05-30T23:18:08+08:00">2022-05-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这是一场意外~上学期误抢了Python公选课，听说会自动退课我就没管了。结果这学期直到上了几周课后我才发现这货还在我的课表里躺着。。。但是这学期好忙不想上这课（说白了就是懒hh），想着挂了算了，但是又看到大作业占成绩70%——欸嘿嘿，做好了不就可以飘过了，于是就有了这个作业。</p>
+<div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/星云.png" alt="星云" style="zoom:33%;"></div><div class="group-picture-column" style="width: 50%;"><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/木纹.png" alt="木纹" style="zoom:33%;"></div></div></div></div>
+<span id="more"></span>
+<div class="note info">
+            <p><strong>说在前面</strong></p><p>这次也是站在了巨人的肩膀上。再次感谢<a target="_blank" rel="noopener" href="https://note.com/outburst">おかず</a>大佬的代码思路，其实说白了我只是在他的工作上调了一些参数而已。</p><p>我的代码可以在<a target="_blank" rel="noopener" href="https://github.com/Taz-dingo/Burning-Kyoujurou">仓库</a>看，包括Java版和Python版。</p>
+          </div>
+<h2 id="原理">原理</h2>
+<h3 id="粒子轨迹绘图">粒子轨迹绘图</h3>
+<h3 id="圆内外不同轨迹">圆内外不同轨迹</h3>
+<h2 id="代码实现">代码实现</h2>
+<h3 id="随机生成粒子">1. 随机生成粒子</h3>
+<p><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/circle1.png" alt="circle1" style="zoom:33%;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">partList = [] <span class="comment">#粒子集合</span></span><br><span class="line">partNums = <span class="number">6000</span> <span class="comment">#粒子数量</span></span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">newParticles</span>():</span><br><span class="line">    <span class="keyword">del</span> partList[:]  <span class="comment">#先清空列表</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(partNums):  </span><br><span class="line">        <span class="comment">#循环生成partNums个粒子</span></span><br><span class="line">        partList.append(Particle())</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Particle</span>: <span class="comment">#粒子类</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">    	<span class="comment">#随机生成坐标</span></span><br><span class="line">        self.pos = PVector(random(width),random(height))  </span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">show</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment">#在粒子所在坐标画圆</span></span><br><span class="line">        circle(self.pos.x, self.pos.y, <span class="number">5</span>)  </span><br></pre></td></tr></table></figure>
+<h3 id="粒子根据noise移动">2. 粒子根据noise()移动</h3>
+<p><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/circle2.png" alt="circle2" style="zoom: 33%;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">move</span>(<span class="params">self</span>):</span><br><span class="line">        self.angle = noise(self.pos.x/noiseScale , self.pos.y/noiseScale ) * noiseStrength  </span><br><span class="line">        <span class="comment">#根据x、y坐标二维noise()，计算角度</span></span><br><span class="line">        self.pos.x += cos(self.angle) <span class="comment">#根据横向移动</span></span><br><span class="line">        self.pos.y += sin(self.angle) <span class="comment">#根据纵向移动</span></span><br></pre></td></tr></table></figure>
+<h3 id="撞墙检测圆内圆外轨迹不同">3. 撞墙检测、圆内圆外轨迹不同</h3>
+<p><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/circle3.png" alt="circle3" style="zoom:33%;"></p>
+<h3 id="调整颜色模式">4. 调整颜色模式</h3>
+<p><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/circle4.png" alt="circle4" style="zoom:33%;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">blendMode(ADD) </span><br><span class="line"><span class="comment">#混色模式ADD（增加）效果是让轨迹重叠时变的更亮</span></span><br><span class="line">colorMode(HSB,<span class="number">360</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="number">60</span>) </span><br><span class="line"><span class="comment">#颜色模式HSB（参数分别是色相、饱和度、明度；最后一个参数是alpha，也就是不透明度）</span></span><br></pre></td></tr></table></figure>
+<h3 id="生成多个不重复的圆调整参数">5. 生成多个不重复的圆，调整参数</h3>
+<p><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/0.png" alt="0" style="zoom:33%;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">noiseScale1 = <span class="number">800</span>;  //噪声比例</span><br><span class="line">noiseStrength1 = <span class="number">90</span>;  //噪声强度</span><br><span class="line">noiseZ = <span class="number">0.00</span>;</span><br><span class="line"></span><br><span class="line">noiseScale2 = <span class="number">62000</span>;  </span><br><span class="line">noiseStrength2 = <span class="number">360</span>;  </span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">fill(<span class="built_in">map</span>(noise(self.angle), <span class="number">0</span>, <span class="number">1</span>, <span class="number">140</span>, <span class="number">300</span>), <span class="number">60</span>, <span class="number">60</span>, <span class="number">15</span>);  //蓝</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/1.png" alt="1" style="zoom:33%;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">noiseScale1 = <span class="number">800</span>;  //噪声比例    </span><br><span class="line">noiseStrength1 = <span class="number">90</span>;  //噪声强度</span><br><span class="line">noiseZ = <span class="number">0.001</span>;</span><br><span class="line"></span><br><span class="line">noiseScale2 = <span class="number">8000</span>;  </span><br><span class="line">noiseStrength2 = <span class="number">90</span>;  </span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">fill(<span class="built_in">map</span>(noise(self.angle), <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">100</span>), <span class="number">60</span>, <span class="number">60</span>, <span class="number">15</span>); //金</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/2.png" alt="2" style="zoom:33%;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">noiseScale1 = <span class="number">800</span>;  //噪声比例    </span><br><span class="line">noiseStrength1 = <span class="number">90</span>;  //噪声强度</span><br><span class="line">noiseZ = <span class="number">0.001</span>;</span><br><span class="line"></span><br><span class="line">noiseScale2 = <span class="number">8000</span>;  </span><br><span class="line">noiseStrength2 = <span class="number">9000</span>;  </span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">fill(<span class="built_in">map</span>(noise(self.angle), <span class="number">0</span>, <span class="number">1</span>, <span class="number">140</span>, <span class="number">300</span>), <span class="number">60</span>, <span class="number">60</span>, <span class="number">15</span>);  //蓝</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/3.png" alt="3" style="zoom:33%;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">noiseScale1 = <span class="number">80</span>;  //噪声比例   </span><br><span class="line">noiseStrength1 = <span class="number">9</span>;  //噪声强度</span><br><span class="line">noiseZ = <span class="number">0.005</span>;</span><br><span class="line"></span><br><span class="line">noiseScale2 = <span class="number">62000</span>;  </span><br><span class="line">noiseStrength2 = <span class="number">9</span>;  </span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">fill(<span class="built_in">map</span>(noise(self.angle), <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">55</span>), <span class="number">87</span>, <span class="number">75</span>, <span class="number">15</span>); //大哥配色</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/4.png" alt="4" style="zoom:33%;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">noiseScale1 = <span class="number">800</span>;  //噪声比例   </span><br><span class="line">noiseStrength1 = <span class="number">90</span>;  //噪声强度</span><br><span class="line">noiseZ = <span class="number">0.001</span>;</span><br><span class="line"></span><br><span class="line">noiseScale2 = <span class="number">8000</span>;  </span><br><span class="line">noiseStrength2 = <span class="number">900</span>;  </span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">fill(<span class="built_in">map</span>(noise(self.angle), <span class="number">0</span>, <span class="number">1</span>, <span class="number">210</span>, <span class="number">360</span>), <span class="number">60</span>, <span class="number">60</span>, <span class="number">15</span>); //紫</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/5.png" alt="5" style="zoom:33%;"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">noiseScale1 = <span class="number">8000</span>;  //噪声比例   </span><br><span class="line">noiseStrength1 = <span class="number">90</span>;  //噪声强度</span><br><span class="line">noiseZ = <span class="number">0.00</span>;</span><br><span class="line"></span><br><span class="line">noiseScale2 = <span class="number">800</span>;  </span><br><span class="line">noiseStrength2 = <span class="number">3000</span>;  </span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">fill(<span class="built_in">map</span>(noise(self.angle), <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">300</span>), <span class="number">60</span>, <span class="number">60</span>, <span class="number">15</span>); //绿</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/Processing/" rel="tag"># Processing</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/15/%E7%87%83%E7%83%A7%E7%9A%84%E7%82%BC%E7%8B%B1%E6%9D%8F%E5%AF%BF%E9%83%8E/" rel="prev" title="燃烧的炼狱杏寿郎">
+      <i class="fa fa-chevron-left"></i> 燃烧的炼狱杏寿郎
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%92%E5%AD%90%E8%BD%A8%E8%BF%B9%E7%BB%98%E5%9B%BE"><span class="nav-number">1.1.</span> <span class="nav-text">粒子轨迹绘图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%86%E5%86%85%E5%A4%96%E4%B8%8D%E5%90%8C%E8%BD%A8%E8%BF%B9"><span class="nav-number">1.2.</span> <span class="nav-text">圆内外不同轨迹</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E7%B2%92%E5%AD%90"><span class="nav-number">2.1.</span> <span class="nav-text">1. 随机生成粒子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%92%E5%AD%90%E6%A0%B9%E6%8D%AEnoise%E7%A7%BB%E5%8A%A8"><span class="nav-number">2.2.</span> <span class="nav-text">2. 粒子根据noise()移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%92%9E%E5%A2%99%E6%A3%80%E6%B5%8B%E5%9C%86%E5%86%85%E5%9C%86%E5%A4%96%E8%BD%A8%E8%BF%B9%E4%B8%8D%E5%90%8C"><span class="nav-number">2.3.</span> <span class="nav-text">3. 撞墙检测、圆内圆外轨迹不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E9%A2%9C%E8%89%B2%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.4.</span> <span class="nav-text">4. 调整颜色模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%9C%86%E8%B0%83%E6%95%B4%E5%8F%82%E6%95%B0"><span class="nav-number">2.5.</span> <span class="nav-text">5. 生成多个不重复的圆，调整参数</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tazdingo"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Tazdingo</p>
+  <div class="site-description" itemprop="description">想做点有意思的</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Taz-dingo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Taz-dingo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:taste_my_blade@outlook.com" title="E-Mail → mailto:taste_my_blade@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022-02 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tazdingo</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

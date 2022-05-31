@@ -33,10 +33,9 @@
 <meta property="og:image" content="https://tazdingo.live/2022/05/15/%E7%87%83%E7%83%A7%E7%9A%84%E7%82%BC%E7%8B%B1%E6%9D%8F%E5%AF%BF%E9%83%8E/大哥原图.png">
 <meta property="og:image" content="https://tazdingo.live/2022/05/15/%E7%87%83%E7%83%A7%E7%9A%84%E7%82%BC%E7%8B%B1%E6%9D%8F%E5%AF%BF%E9%83%8E/燃烧的大哥.png">
 <meta property="article:published_time" content="2022-05-15T13:51:36.000Z">
-<meta property="article:modified_time" content="2022-05-29T03:03:19.170Z">
+<meta property="article:modified_time" content="2022-05-30T15:07:47.140Z">
 <meta property="article:author" content="Tazdingo">
 <meta property="article:tag" content="Java">
-<meta property="article:tag" content="技术">
 <meta property="article:tag" content="Processing">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -143,16 +142,6 @@
     <a href="/categories/%E9%98%85%E8%A7%88%E5%AE%A4-%E6%94%BE%E6%98%A0%E5%8E%85" rel="section"><i class="fa fa-coffee fa-fw"></i>阅览室&放映厅</a>
 
   </li>
-        <li class="menu-item menu-item-标签云">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签云</a>
-
-  </li>
-        <li class="menu-item menu-item-时间轴">
-
-    <a href="/archives/" rel="section"><i class="fa fa-folder fa-fw"></i>时间轴</a>
-
-  </li>
         <li class="menu-item menu-item-愿望清单">
 
     <a href="/wishlists/" rel="section"><i class="fa fa-calendar fa-fw"></i>愿望清单</a>
@@ -216,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-29 11:03:19" itemprop="dateModified" datetime="2022-05-29T11:03:19+08:00">2022-05-29</time>
+                <time title="修改时间：2022-05-30 23:07:47" itemprop="dateModified" datetime="2022-05-30T23:07:47+08:00">2022-05-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -224,7 +213,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">学习</span></a>
                 </span>
             </span>
 
@@ -249,18 +238,31 @@
         <p>之前玩Processing搞出了很像火焰的效果，就很想给大哥做个艺术生成画。但是本人太懒，放了好一段时间，这几天终于在Python作业ddl的淫威下把它赶出来了（但其实先写的Java版本再转成Python😄）。</p>
 <div class="group-picture"><div class="group-picture-container"><div class="group-picture-row"><div class="group-picture-column" style="width: 50%;"><img src="/2022/05/15/%E7%87%83%E7%83%A7%E7%9A%84%E7%82%BC%E7%8B%B1%E6%9D%8F%E5%AF%BF%E9%83%8E/大哥原图.png" alt="大哥原图"></div><div class="group-picture-column" style="width: 50%;"><img src="/2022/05/15/%E7%87%83%E7%83%A7%E7%9A%84%E7%82%BC%E7%8B%B1%E6%9D%8F%E5%AF%BF%E9%83%8E/燃烧的大哥.png" alt="燃烧的大哥"></div></div></div></div>
 <span id="more"></span>
-<p>首先要非常感谢<a target="_blank" rel="noopener" href="https://note.com/outburst">おかず</a>大佬的开源代码，代码思路其实大部分都是来自于这位大佬。他还做了很多别的艺术生成画，大都很有趣也很好看，推荐去看看！（不过上note网需要一些魔法←_←）</p>
-<p>我的代码可以在<a target="_blank" rel="noopener" href="https://github.com/Taz-dingo/Burning-Kyoujurou">仓库</a>看，包括Java版和Python版。</p>
-<h2 id="原理">原理</h2>
-<p>效果的核心是函数noise()。</p>
-<p>noise()其实就是一个“自然”的随机数，和random()不同，它的返回值是趋于正态分布的，看起来更“自然”、更漂亮（到底是为啥呢，感觉好神奇0.0）。把noise()和粒子的一些属性（位移、颜色等等）绑在一起，配上合适的参数，粒子运动后就可以产生一些有意思和好看的图形。</p>
+<div class="note info">
+            <p><strong>说在前面</strong></p><p>原图是我在Google上识图找的，侵删！</p><p>首先要非常感谢<a target="_blank" rel="noopener" href="https://note.com/outburst">おかず</a>大佬的开源代码，代码思路其实大部分都是来自于这位大佬。他还做了很多别的艺术生成画，大都很有趣也很好看，推荐去看看！（不过上note网需要一些魔法←_←）</p><p>我的代码可以在<a target="_blank" rel="noopener" href="https://github.com/Taz-dingo/Burning-Kyoujurou">仓库</a>看，包括Java版和Python版。</p>
+          </div>
+<h2 id="理论原理">理论原理</h2>
+<h3 id="特殊效果">特殊效果</h3>
+<p>效果的核心就是是noise()噪声函数 + 粒子轨迹。</p>
+<p>noise()其实就是一个“自然”的随机数（区别于 random()
+），它的返回值是趋于正态分布的，看起来更“自然”、更漂亮（类似斐波那契数列，也是自然好看。也许自然界的生物就是会觉得“自然”的好看？感觉好神奇0.0）。把noise()和粒子的一些属性（位移、颜色等等）绑在一起，配上合适的参数，粒子运动轨迹就可以产生一些有意思和好看的图形。</p>
 <p>此处就用noise()操控了粒子的位移属性：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据noise()计算偏移角度</span></span><br><span class="line">angle = noise(pos.x/noiseScale, pos.y/noiseScale) * noiseStrength;</span><br><span class="line"><span class="comment">//粒子位置根据angle值变化</span></span><br><span class="line">pos.x += cos(angle) * step; </span><br><span class="line">pos.y += sin(angle) * step;</span><br></pre></td></tr></table></figure>
-<h2 id="思路">思路</h2>
-<p>“刺绣法”。用人话说就是拿来一张底图，用它的图形形状来规定小粒子的生成位置，再让粒子移动产生轨迹，从而形成漂亮的效果。</p>
-<p>此处利用的是像素的明度来确定范围<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。每帧遍历画布里的每个像素，明度低于某阈值的像素处可以生成粒子。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//遍历整个画面</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;j &lt; height;j++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i &lt; width;i++)&#123;</span><br><span class="line">      <span class="type">color</span> <span class="variable">c</span> <span class="operator">=</span> get(i,j);  <span class="comment">//获取像素点的颜色</span></span><br><span class="line">      <span class="keyword">if</span>(brightness(c) &lt; bright)&#123;  <span class="comment">//如果像素点的明度小于bright</span></span><br><span class="line">        particles.add(<span class="keyword">new</span> <span class="title class_">Particle</span>(i,j));  <span class="comment">//那么在该点生成一个粒子</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>大致思路是这样，其他不好懂的就是Processing内库的函数了，直接到<a target="_blank" rel="noopener" href="https://processing.org/reference">官方文档</a>哪里不会查哪里。</p>
+<h3 id="让指定区域产生效果">让指定区域产生效果</h3>
+<p>“刺绣法”。因为效果其实就是粒子的轨迹，所以想要只在指定区域产生效果只需要让粒子就生成在指定区域就行了。“刺绣法”用人话说就是拿来一张底图，根据它的图形来规定粒子的生成位置。</p>
+<h2 id="代码实现">代码实现</h2>
+<h3 id="导入图片">导入图片</h3>
+<p>用的是Processing自带的库函数loadImage，用法官方文档讲的最清楚，就不多说了。</p>
+<h3 id="定义粒子类">定义粒子类</h3>
+<p>粒子对象被创建时会根据传入参数被赋予坐标（传入参数在下面的“刺绣法”里算出）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Particle</span> &#123;</span><br><span class="line">    PVector pos;  <span class="comment">//向量pos</span></span><br><span class="line"> 	<span class="type">float</span> angle;  <span class="comment">//角度</span></span><br><span class="line"> 	<span class="type">float</span> count; <span class="comment">//计次数</span></span><br><span class="line"> 	<span class="comment">//构造器</span></span><br><span class="line"> 	Particle(<span class="type">float</span> x,<span class="type">float</span> y) &#123;</span><br><span class="line">   	pos = <span class="keyword">new</span> <span class="title class_">PVector</span>(x, y);  <span class="comment">//随机位置</span></span><br><span class="line">   	angle = random(<span class="number">10</span>);</span><br><span class="line">   	count = <span class="number">0</span>;</span><br><span class="line"> 	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="明度刺绣法生成粒子">明度“刺绣法”生成粒子</h3>
+<p>此处利用的是像素的明度来“刺绣”（也就是确定范围）<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。每帧遍历画布里的每个像素，明度低于某阈值的像素处可以生成粒子。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//遍历整个画面</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;j &lt; height;j++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i &lt; width;i++)&#123;</span><br><span class="line">        <span class="type">color</span> <span class="variable">c</span> <span class="operator">=</span> get(i,j);  <span class="comment">//获取像素点的颜色</span></span><br><span class="line">        <span class="keyword">if</span>(brightness(c) &lt; bright)&#123;  <span class="comment">//如果像素点的明度小于bright</span></span><br><span class="line">            particles.add(<span class="keyword">new</span> <span class="title class_">Particle</span>(i,j));  <span class="comment">//那么粒子容器加入一个新粒子（粒子坐标为此处）</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="粒子移动">粒子移动</h3>
+<p>粒子类加入move方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">move</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//angle = noise(pos.x/noiseScale, pos.y/noiseScale, count) * noiseStrength;</span></span><br><span class="line">    angle = noise(pos.x/noiseScale, pos.y/noiseScale) * noiseStrength;</span><br><span class="line">   <span class="comment">//粒子位置变化</span></span><br><span class="line">   pos.x += cos(angle) * step; </span><br><span class="line">   pos.y += sin(angle) * step;</span><br><span class="line">   count += noiseZ ;  <span class="comment">//重点！随时间变化了，所以线路不那么固定</span></span><br><span class="line">   <span class="comment">//step += 0.005;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大致思路是这样，其他不好懂的就是Processing内库的函数了，可以直接到<a target="_blank" rel="noopener" href="https://processing.org/reference">官方文档</a>哪里不会查哪里。</p>
 <section class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
@@ -278,7 +280,6 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/Java/" rel="tag"># Java</a>
-              <a href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag"># 技术</a>
               <a href="/tags/Processing/" rel="tag"># Processing</a>
               <a href="/tags/Python/" rel="tag"># Python</a>
           </div>
@@ -292,7 +293,10 @@
     <a href="/2022/04/26/%E8%AE%A8%E5%8E%8C%E6%BB%A5%E7%94%A8%E2%80%9C%E5%8D%B7%E2%80%9D/" rel="prev" title="讨厌滥用“卷”">
       <i class="fa fa-chevron-left"></i> 讨厌滥用“卷”
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/" rel="next" title="自然噪波圆">
+      自然噪波圆 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -351,7 +355,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%AE%BA%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">理论原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E6%95%88%E6%9E%9C"><span class="nav-number">1.1.</span> <span class="nav-text">特殊效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A9%E6%8C%87%E5%AE%9A%E5%8C%BA%E5%9F%9F%E4%BA%A7%E7%94%9F%E6%95%88%E6%9E%9C"><span class="nav-number">1.2.</span> <span class="nav-text">让指定区域产生效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-number">2.1.</span> <span class="nav-text">导入图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E7%B2%92%E5%AD%90%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">定义粒子类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%8E%E5%BA%A6%E5%88%BA%E7%BB%A3%E6%B3%95%E7%94%9F%E6%88%90%E7%B2%92%E5%AD%90"><span class="nav-number">2.3.</span> <span class="nav-text">明度“刺绣法”生成粒子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B2%92%E5%AD%90%E7%A7%BB%E5%8A%A8"><span class="nav-number">2.4.</span> <span class="nav-text">粒子移动</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -366,7 +370,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
