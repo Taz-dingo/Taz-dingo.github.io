@@ -23,22 +23,20 @@
     var CONFIG = {"hostname":"tazdingo.live","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="逛班班大佬的博客的时候觉得侧边栏做的很漂亮，于是也想修改一下侧边栏的背景图，查了一些教程，但实现效果并不好，两边会留下很丑的黑边，最后看了班班博客网页的源码终于达成了目标效果。 感觉网上现有的教程基本都因为版本太老不适用了，所以分享一下我现在（2022.03.19）的解决方案。">
+  <meta name="description" content="简单介绍Photoshop图层混合模式原理。 根据原理不同主要分为正片叠底系(Multiply)、滤色系(Screen)、叠加系(Overlay)三大系列。这三个系最常见也最常用，每个系内的各个模式原理相似但细节不同。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="修改NexT侧边栏背景图片">
-<meta property="og:url" content="https://tazdingo.live/2022/03/19/%E4%BF%AE%E6%94%B9NexT%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/index.html">
+<meta property="og:title" content="图层混合模式">
+<meta property="og:url" content="https://tazdingo.live/2022/06/05/%E5%9B%BE%E5%B1%82%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="鱼塔">
-<meta property="og:description" content="逛班班大佬的博客的时候觉得侧边栏做的很漂亮，于是也想修改一下侧边栏的背景图，查了一些教程，但实现效果并不好，两边会留下很丑的黑边，最后看了班班博客网页的源码终于达成了目标效果。 感觉网上现有的教程基本都因为版本太老不适用了，所以分享一下我现在（2022.03.19）的解决方案。">
+<meta property="og:description" content="简单介绍Photoshop图层混合模式原理。 根据原理不同主要分为正片叠底系(Multiply)、滤色系(Screen)、叠加系(Overlay)三大系列。这三个系最常见也最常用，每个系内的各个模式原理相似但细节不同。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tazdingo.live/2022/03/19/%E4%BF%AE%E6%94%B9NexT%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/找目标位置的代码.jpg">
-<meta property="article:published_time" content="2022-03-19T12:36:56.000Z">
-<meta property="article:modified_time" content="2022-05-29T04:04:29.342Z">
+<meta property="article:published_time" content="2022-06-05T04:47:24.000Z">
+<meta property="article:modified_time" content="2022-06-29T02:25:57.808Z">
 <meta property="article:author" content="Tazdingo">
-<meta property="article:tag" content="NexT">
+<meta property="article:tag" content="后期">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tazdingo.live/2022/03/19/%E4%BF%AE%E6%94%B9NexT%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/找目标位置的代码.jpg">
 
-<link rel="canonical" href="https://tazdingo.live/2022/03/19/%E4%BF%AE%E6%94%B9NexT%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">
+<link rel="canonical" href="https://tazdingo.live/2022/06/05/%E5%9B%BE%E5%B1%82%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -51,7 +49,7 @@
   };
 </script>
 
-  <title>修改NexT侧边栏背景图片 | 鱼塔</title>
+  <title>图层混合模式 | 鱼塔</title>
   
 
 
@@ -172,7 +170,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://tazdingo.live/2022/03/19/%E4%BF%AE%E6%94%B9NexT%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">
+    <link itemprop="mainEntityOfPage" href="https://tazdingo.live/2022/06/05/%E5%9B%BE%E5%B1%82%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -185,7 +183,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          修改NexT侧边栏背景图片
+          图层混合模式
         </h1>
 
         <div class="post-meta">
@@ -195,14 +193,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-03-19 20:36:56" itemprop="dateCreated datePublished" datetime="2022-03-19T20:36:56+08:00">2022-03-19</time>
+              <time title="创建时间：2022-06-05 12:47:24" itemprop="dateCreated datePublished" datetime="2022-06-05T12:47:24+08:00">2022-06-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-29 12:04:29" itemprop="dateModified" datetime="2022-05-29T12:04:29+08:00">2022-05-29</time>
+                <time title="修改时间：2022-06-29 10:25:57" itemprop="dateModified" datetime="2022-06-29T10:25:57+08:00">2022-06-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -232,43 +230,56 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>逛<a target="_blank" rel="noopener" href="https://blog.dlzhang.com/">班班</a>大佬的博客的时候觉得侧边栏做的很漂亮，于是也想修改一下侧边栏的背景图，查了一些教程，但实现效果并不好，两边会留下很丑的黑边，最后看了班班博客网页的源码终于达成了目标效果。</p>
-<p>感觉网上现有的教程基本都因为版本太老不适用了，所以分享一下我现在（2022.03.19）的解决方案。
-<span id="more"></span></p>
-<p><strong>注：</strong> <em>本文操作基于Hexo：6.0.0
-NexT：7.8.0</em></p>
-<p>（by the way，一种查看NexT版本的方法是打开.json
-拿出来讲是因为我又费了老大劲才知道咋查~~）</p>
-<p>下面先讲我实现效果的过程，分享模仿现有博客效果的一种思路，不感兴趣的话可以直接看<a href="#修改的方法">修改的方法</a>。</p>
-<h2 id="我解决问题的过程模仿别人博客效果的方法">我解决问题的过程（模仿别人博客效果的方法）</h2>
-<p><strong>注：</strong>
-<em>我这里使用的是Chrome浏览器，别的浏览器情况可能稍有不同。</em></p>
+        <p>简单介绍Photoshop图层混合模式原理。</p>
+<p>根据原理不同主要分为正片叠底系(Multiply)、滤色系(Screen)、叠加系(Overlay)三大系列。这三个系最常见也最常用，每个系内的各个模式原理相似但细节不同。</p>
+<span id="more"></span>
+<div class="note info">
+            <p>本文是我看<a target="_blank" rel="noopener" href="https://space.bilibili.com/25481171">韩世麟</a>讲解视频[^1]做的笔记（讲的太好了，先给个大大的赞）。</p>
+          </div>
+<p>计算原则：</p>
 <ol type="1">
-<li><p>打开目标博客，并打开源码菜单（Chrome快捷键F12）；</p></li>
-<li><p>一层层排查我们想要模仿的效果在哪一栏（Chrome的话鼠标掠过代码时网页相应的部分会高亮显示）；</p></li>
-<li><p>研究一下目标的代码。</p></li>
+<li>色彩值0-255<strong>换算</strong>成0-1</li>
+<li><strong>分通道</strong>计算（R、G、B）</li>
+<li><strong>逐像素</strong>计算</li>
 </ol>
-<p><strong>下面是经典的举个栗子环节：</strong></p>
-<p><img src="/2022/03/19/%E4%BF%AE%E6%94%B9NexT%E4%BE%A7%E8%BE%B9%E6%A0%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/找目标位置的代码.jpg" alt="找目标位置的代码" style="zoom:50%;"></p>
-<p>我们想修改侧边栏的背景图，排查下来我们找到了它的位置，目标代码就是</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.site-brand-container</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/resources/img/header.jpg</span>);</span><br><span class="line">    <span class="attribute">background-position</span>: <span class="number">70%</span> <span class="number">20%</span>;</span><br><span class="line">    <span class="attribute">background-size</span>: cover;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>剩下的就是css的问题了，看懂之后我们就可以模仿下来啦。</p>
-<h2 id="修改的方法">修改的方法</h2>
-<h3 id="前期准备">前期准备</h3>
+<h2 id="正片叠底multiply">正片叠底(Multiply)</h2>
+<h3 id="公式">公式</h3>
+<p><span class="math inline">\(f(a,b)=A*B\)</span></p>
+<p>就是相乘。</p>
+<h3 id="特性">特性</h3>
 <ol type="1">
-<li><p>确保_config.yml中的style已经取消注释；</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br></pre></td></tr></table></figure></li>
-<li><p>检查一下 _data里有没有styles.styl这个文件，如果没有就新建一个txt改名改后缀为styles.styl。</p></li>
+<li><strong>扣白留黑。</strong></li>
+<li>满足交换律。<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
 </ol>
-<h3 id="修改">修改</h3>
+<h2 id="滤色screen">滤色(Screen)</h2>
+<h3 id="公式-1">公式</h3>
+<p><span class="math inline">\(1-f(a,b)=(1-A)(1-B)\)</span></p>
+<p>or <span class="math inline">\(f(a,b)=1-(1-A)(1-B)\)</span></p>
+<p>(A反相*B反相)的反相。</p>
+<h3 id="特性-1">特性</h3>
 <ol type="1">
-<li><p>把你准备好的背景图放进，记好图片名。</p>
-<p>（最好起一个好名字，这是一个好习惯！）</p></li>
-<li><p>打开styles.styl，添加以下代码：</p>
-<p>（/images/后加你的图片全名，包括后缀。比如这里我的图片叫做<em>siteBackground.jpg</em>）</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 侧边栏背景</span></span><br><span class="line"><span class="selector-class">.site-brand-container</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: url(/images/siteBackground.jpg);</span><br><span class="line">  <span class="attribute">background-position</span>: center; <span class="comment">//位置“居中”</span></span><br><span class="line">  <span class="attribute">background-size</span>: cover ; <span class="comment">//大小&amp;&amp;缩放选择“覆盖”</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果要玩别的花样或想理解代码含义，请自行查阅CSS-background的相关资料。</p></li>
+<li><strong>扣黑留白，永不过曝。</strong></li>
+<li>满足交换律。</li>
 </ol>
+<h2 id="叠加overlay">叠加(Overlay)</h2>
+<h3 id="公式-2">公式</h3>
+<p><span class="math display">\[ f(a,b)=\begin{cases}
+2A*B, &amp; if a&lt;0.5 \\
+1-2(1-A)(1-B), &amp; otherwise   \\
+\end{cases}\]</span></p>
+<p>正片叠底和滤色的组合拳，各占一半的分段函数（当然，在量上不同了）。</p>
+<h3 id="特性-2">特性</h3>
+<ol type="1">
+<li>扣灰留黑白。（应用：中性灰调色）</li>
+<li>不满足交换律。</li>
+</ol>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>交换律，即base layer和top
+layer可以互换<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
     </div>
 
@@ -278,7 +289,7 @@ NexT：7.8.0</em></p>
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/NexT/" rel="tag"># NexT</a>
+              <a href="/tags/%E5%90%8E%E6%9C%9F/" rel="tag"># 后期</a>
           </div>
 
         
@@ -287,13 +298,10 @@ NexT：7.8.0</em></p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/17/%E5%8F%89%E4%B9%98%E7%9A%84%E5%8F%B3%E6%89%8B%E8%9E%BA%E6%97%8B%E5%AE%9A%E5%88%99/" rel="prev" title="叉乘的右手螺旋定则">
-      <i class="fa fa-chevron-left"></i> 叉乘的右手螺旋定则
+    <a href="/2022/05/29/%E8%87%AA%E7%84%B6%E5%99%AA%E6%B3%A2%E5%9C%86/" rel="prev" title="自然噪波圆">
+      <i class="fa fa-chevron-left"></i> 自然噪波圆
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/04/04/%E4%BB%8E%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%88%B0%E4%BD%A0%E5%AE%B6%E9%97%A8%E5%8F%A3%E6%98%AF%E6%88%91%E4%B8%80%E5%A4%A9%E4%B8%AD%E6%9C%80%E6%A3%92%E7%9A%84%E5%8D%81%E7%A7%92%E2%80%94%E2%80%94%E3%80%8A%E5%BF%83%E7%81%B5%E6%8D%95%E6%89%8B%E3%80%8B/" rel="next" title="从停车场到你家门口是我一天中最棒的十秒——《心灵捕手》">
-      从停车场到你家门口是我一天中最棒的十秒——《心灵捕手》 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -352,7 +360,7 @@ NexT：7.8.0</em></p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%87%E7%A8%8B%E6%A8%A1%E4%BB%BF%E5%88%AB%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%88%E6%9E%9C%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">我解决问题的过程（模仿别人博客效果的方法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">修改的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="nav-number">2.1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9"><span class="nav-number">2.2.</span> <span class="nav-text">修改</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E7%89%87%E5%8F%A0%E5%BA%95multiply"><span class="nav-number">1.</span> <span class="nav-text">正片叠底(Multiply)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%A4%E8%89%B2screen"><span class="nav-number">2.</span> <span class="nav-text">滤色(Screen)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F-1"><span class="nav-number">2.1.</span> <span class="nav-text">公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%80%A7-1"><span class="nav-number">2.2.</span> <span class="nav-text">特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%A0%E5%8A%A0overlay"><span class="nav-number">3.</span> <span class="nav-text">叠加(Overlay)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F-2"><span class="nav-number">3.1.</span> <span class="nav-text">公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%80%A7-2"><span class="nav-number">3.2.</span> <span class="nav-text">特性</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -494,6 +502,59 @@ NexT：7.8.0</em></p>
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
