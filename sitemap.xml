@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tazdingo.live/2023/05/20/%E6%88%91%E4%BB%AC%E6%8B%8D%E4%BA%86%E4%B8%80%E9%83%A8%EF%BC%88%E5%BE%AE%EF%BC%89%E7%94%B5%E5%BD%B1%EF%BC%81/</loc>
+    
+    <lastmod>2023-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tazdingo.live/2022/11/11/%E9%BB%91%E5%B9%95%E7%B4%A0%E6%9D%90%E6%8A%A0%E5%83%8F/</loc>
+    
+    <lastmod>2022-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tazdingo.live/2022/11/10/Navicat%E8%BF%9E%E6%8E%A5MySQL%E6%8A%A5%E9%94%992002/</loc>
     
     <lastmod>2022-11-10</lastmod>
@@ -238,85 +256,92 @@
 
   <url>
     <loc>https://tazdingo.live/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>https://tazdingo.live/tags/%E6%83%B3%E6%B3%95/</loc>
+    <lastmod>2023-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tazdingo.live/tags/Java/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tazdingo.live/tags/C/</loc>
-    <lastmod>2022-11-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tazdingo.live/tags/%E6%83%B3%E6%B3%95/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tazdingo.live/tags/%E5%90%8E%E6%9C%9F/</loc>
-    <lastmod>2022-11-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tazdingo.live/tags/NexT/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tazdingo.live/tags/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tazdingo.live/tags/NexT/</loc>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tazdingo.live/tags/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tazdingo.live/tags/Processing/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tazdingo.live/tags/Python/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tazdingo.live/tags/%E6%91%84%E5%BD%B1/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tazdingo.live/tags/MySQL/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tazdingo.live/tags/%E5%89%AA%E8%BE%91/</loc>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -325,21 +350,21 @@
   
   <url>
     <loc>https://tazdingo.live/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tazdingo.live/categories/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://tazdingo.live/categories/%E9%98%85%E8%A7%88%E5%AE%A4-%E6%94%BE%E6%98%A0%E5%8E%85/</loc>
-    <lastmod>2022-11-10</lastmod>
+    <lastmod>2023-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
